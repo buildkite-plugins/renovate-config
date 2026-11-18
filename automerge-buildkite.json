@@ -1,0 +1,28 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "description": "Automerge non-major buildkite-plugins updates",
+      "matchManagers": ["buildkite"],
+      "matchPackageNames": ["buildkite-plugins/*-buildkite-plugin"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": false
+    },
+    {
+      "description": "Automerge non-major Buildkite linter and tester image updates",
+      "matchDatasources": ["docker"],
+      "matchPackageNames": [
+        "buildkite/plugin-linter",
+        "buildkite/plugin-tester",
+        "docker.io/buildkite/plugin-linter",
+        "docker.io/buildkite/plugin-tester"
+      ],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": false
+    }
+  ]
+}
